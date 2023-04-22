@@ -1,0 +1,12 @@
+.copyright {
+    font-family:"Arial, Helvetica, sans-serif";
+    font-size: 15px;
+    text-align: right;
+    
+}
+
+.logo-img {
+    height: 10vmin;
+    pointer-events: none;
+    padding: 14px 16px;
+}
