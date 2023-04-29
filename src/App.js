@@ -8,15 +8,13 @@ import Nav from './component/nav/Nav';
 
 function App() {
   return (
-    <>
-    <Header>  </Header>
-    
-    <Nav> </Nav>
-
-    <Main>  </Main> 
-    
-    <Footer> </Footer>
-    </>
+    <div className='container'>
+      <Header>  </Header>
+      
+      <Main>  </Main> 
+      
+      <Footer> </Footer>
+    </div>
   );
 }
 
