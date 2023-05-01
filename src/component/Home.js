@@ -1,7 +1,7 @@
 import React from "react";
-import Nav from "./nav/Nav"; 
+import Navigation from "./nav/NavBar"; 
 
-function homepage() {
+function Home() {
     return<>
     <p>This is a homepage</p>
     <h1>Little Lemon</h1>
@@ -10,3 +10,5 @@ function homepage() {
     
     </>
 }
+
+export default Home

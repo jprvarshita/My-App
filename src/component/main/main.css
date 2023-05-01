@@ -14,6 +14,7 @@
 .h4 span{
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
+    color: white;
     
 }
 
@@ -21,4 +22,15 @@
     background-color: #F4CE14;
     border-radius: 16em;
     font-weight: bold;
+}
+
+.main-contaniner{
+    background-color: #495E57;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 2em;
+}
+
+.desc p{
+    color: white;
 }

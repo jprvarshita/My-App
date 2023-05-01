@@ -1,7 +1,8 @@
 import React from "react";
 import "./header.css"
 import logo from "./logo-header.png"
-import Nav from "../nav/Nav";
+import Navigation from "../nav/NavBar";
+import { Router } from "react-router-dom";
 
 
 function Header() {
@@ -9,10 +10,12 @@ function Header() {
         <div className="header"> 
             <div className="div-img">
                 <img src={logo} alt="Logo" className="header-img"></img>
-            </div>   
+            </div>  
+           
             <div>
-                <Nav></Nav>
-            </div>        
+                <Navigation></Navigation>
+            </div>  
+                 
         </div>
        
     </>

@@ -1,17 +1,19 @@
 import React from "react"
+import LittleLemon from "./LittleLemon"
 
-
-function Specials() {
+function Contact() {
 
     return <>
         <div className="main"> 
 
+            <LittleLemon></LittleLemon>
+
             <div>
-                <h4>Specials page will come here!</h4>
+                <h4>Contact page will come here!</h4>
                 <div></div>                
             </div>
         </div>
     </>
 }
 
-export default Specials;
+export default Contact

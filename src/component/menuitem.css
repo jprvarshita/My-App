@@ -1,0 +1,23 @@
+.menu {
+   text-align: left;
+}
+
+.menuItem {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.item {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.description {
+    color: #495E57;
+}
+
+.price {
+    color: #495E57;
+    font-style: italic;
+    font-size: large;
+}
