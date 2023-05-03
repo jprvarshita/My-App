@@ -35,6 +35,16 @@
   padding: 25px;
 }
 
+.special {
+  grid-area: main;
+  padding-top: 10px;
+}
+
+.special div span {
+  grid-area: main;
+  text-indent: 2em;
+}
+
 .left {
   grid-area: left;
   background-color: peachpuff;

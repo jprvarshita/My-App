@@ -10,9 +10,7 @@ function Menu() {
             <LittleLemon></LittleLemon>
 
             <div>
-                <h4>Menu page will come here!</h4>
-                <div></div> 
-                <MenuItem></MenuItem>               
+               <MenuItem></MenuItem>               
             </div>
         </div>
     </>

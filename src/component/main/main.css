@@ -26,11 +26,22 @@
 
 .main-contaniner{
     background-color: #495E57;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     padding-left: 2em;
 }
 
 .desc p{
     color: white;
+}
+
+.reservation-div {
+    padding-top: 1em;
+    padding-left: 2em;
+
+}
+
+.reservation-div input{
+    text-align: center;
+
 }

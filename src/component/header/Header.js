@@ -1,6 +1,7 @@
 import React from "react";
 import "./header.css"
-import logo from "./logo-header.png"
+// import logo from "./logo-header.png"
+import logo from "./logo.png"
 import Navigation from "../nav/NavBar";
 import { Router } from "react-router-dom";
 
@@ -8,6 +9,7 @@ import { Router } from "react-router-dom";
 function Header() {
     return <>
         <div className="header"> 
+        <div>
             <div className="div-img">
                 <img src={logo} alt="Logo" className="header-img"></img>
             </div>  
@@ -15,7 +17,7 @@ function Header() {
             <div>
                 <Navigation></Navigation>
             </div>  
-                 
+            </div>    
         </div>
        
     </>

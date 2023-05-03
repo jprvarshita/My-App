@@ -9,8 +9,6 @@ function Footer() {
                 <div><img src={logo} alt="Footer logo" className="logo-img"></img></div>
                 <div className="copyright"><span>Copyright text will come here</span></div>
             </div>
-            
-            
         </div>
     </>
 }

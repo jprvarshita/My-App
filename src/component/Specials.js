@@ -1,14 +1,19 @@
 import React from "react"
+import specialImage from "../images/special-pasta.png"
 
 
 function Specials() {
 
     return <>
-        <div className="main"> 
+        <div className="special"> 
+            <div>                                
+                <div>
+                    <span>Specials page will come here!</span>    
+                </div> 
 
-            <div>
-                <h4>Specials page will come here!</h4>
-                <div></div>                
+                <div>
+                    <img src={specialImage} alt="Pasta" className="special-img"></img>
+                </div>               
             </div>
         </div>
     </>
