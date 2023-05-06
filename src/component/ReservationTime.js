@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Reservation from "./Reservation";
+import React from "react";
 
 
 const ReservationTime = ({availableTime, setAvailableTime}) => {

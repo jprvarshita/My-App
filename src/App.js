@@ -1,14 +1,10 @@
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 import './App.css';
-import Footer from './component/footer/Footer';
-import Header from './component/header/Header';
 import Main from './component/main/Main';
-import Reservation from './component/Reservation';
-import Contact from './component/Contact';
-import Menu from './component/Menu';
-import { useReducer, useState } from 'react';
-import { act } from 'react-dom/test-utils';
+import { useEffect, useReducer, useState } from 'react';
+import { fetchAPI } from './api/bookingAPI';
+
 
 const initialState = [  "17:00",
                         "18:00",
@@ -18,57 +14,67 @@ const initialState = [  "17:00",
                         "22:00"
                       ];
 
+
 const initializeTimes = () => {
   //console.log("initializeTimes called...")
-  return initialState;
+
+  const todayDate = new Date()
+  //console.log("todayDate == " + todayDate)
+  //console.log("todayDate.getDate() == " + todayDate.getDate())
+  const newAvailableTime = fetchAPI(todayDate)
+  console.log(newAvailableTime)
+
+  return newAvailableTime;
 };
 
 const updateTimes = (availableTime, action) => {
   console.log("action == " + action); 
   console.log("newDate in App.js == " + action.payload)
   //Additional logic to change time will come here
-  return availableTime;
+  const userSelectedDate = new Date(action.payload);
+  const newAvailableTime = fetchAPI(userSelectedDate)
+  console.log(newAvailableTime)
+
+  return newAvailableTime;
 };
 
 function App() {
+
+  useEffect(() => {
+    initializeTimes()
+  }, []) ;
 
   const [reservationData, setReservationData] = useState({
     firstName : "",
     lastName : "",
     reservationDate : "",
-    reservationDate : "",
+    reservationTime : "",
     numberOfGuests : "",
     occasion : "",
     email : "",
     phone : ""
   });
 
-
+const [reservations, setResrvations] = useState([]);
   
 const setAvailableTime = (value) => {
   dispatch({payload : value})
 }
 
-const [availableTime, dispatch] = useReducer(updateTimes, initialState, initializeTimes)
+const [availableTime, dispatch] = useReducer(updateTimes, initialState)
 
   return (
       <div className='container'>
         <Router>
-          <Header>  </Header>
-                   
-          <Routes> 
-              <Route path="/" element={<Main/>}></Route>
-              <Route path="/Menu" element={<Menu/>}></Route>
-              <Route path="/Reservation" element={<Reservation 
-                                                    reservationData ={reservationData} 
-                                                    setReservationData={setReservationData} 
-                                                    availableTime={availableTime}
-                                                    setAvailableTime={setAvailableTime}/>}></Route>
-              <Route path="/Contact" element={<Contact/>}></Route>
-          </Routes>
-          
-          <Footer> </Footer>
-        </Router>
+          <Main reservations={reservations}
+                setResrvations={setResrvations}
+                reservationData ={reservationData} 
+                setReservationData={setReservationData} 
+                availableTime={availableTime}
+                setAvailableTime={setAvailableTime}>
+
+            </Main>
+         </Router>
       </div>
     
   );

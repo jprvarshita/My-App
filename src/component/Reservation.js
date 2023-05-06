@@ -1,10 +1,8 @@
-import React, { useState } from "react"
 import LittleLemon from "./LittleLemon"
-import ReservationTime from "./ReservationTime";
 import BookingForm from "./BookingForm";
 
 
-function Reservation({reservationData, setReservationData, availableTime, setAvailableTime}) {
+function Reservation({reservations, setResrvations, reservationData, setReservationData, availableTime, setAvailableTime, submitForm}) {
     
 
 
@@ -14,8 +12,10 @@ function Reservation({reservationData, setReservationData, availableTime, setAva
             <LittleLemon></LittleLemon>
 
             <div>
-               <BookingForm reservationData={reservationData} setReservationData={setReservationData} 
+               <BookingForm reservations={reservations} setResrvations={setResrvations}
+                        reservationData={reservationData} setReservationData={setReservationData} 
                         availableTime={availableTime} setAvailableTime={setAvailableTime}
+                        submitForm={submitForm}
                         ></BookingForm>               
             </div>
         </div>

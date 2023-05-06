@@ -1,10 +1,11 @@
 import React from "react";
-import { useState } from "react";
 import ReservationTime from "./ReservationTime";
+import ResrvationDataTable from "./ReservationDataTable";
+import { Form } from "react-router-dom";
 
 
 
-function BookingForm({reservationData, setReservationData, availableTime, setAvailableTime}) {
+function BookingForm({reservations, setResrvations, reservationData, setReservationData, availableTime, setAvailableTime, submitForm}) {
   
     const onChangeHandler = (event) => {
         //alert(event.target.name)
@@ -14,8 +15,8 @@ function BookingForm({reservationData, setReservationData, availableTime, setAva
             [event.target.name] : event.target.value
         });
 
-        console.log(event.target.name);
-        console.log(event.target.value);
+        //console.log(event.target.name);
+        //console.log(event.target.value);
 
         if (event.target.name === "reservationDate") {
             const newDate = event.target.value
@@ -25,11 +26,26 @@ function BookingForm({reservationData, setReservationData, availableTime, setAva
     
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        alert(reservationData)
+        //console.log(reservationData)
+        reservations.push(reservationData)
+        setResrvations(reservations)
+        //console.log(reservations)
+        setReservationData({
+            firstName : "",
+            lastName : "",
+            reservationDate : "",
+            reservationTime : "",
+            numberOfGuests : "",
+            occasion : "",
+            email : "",
+            phone : ""
+          })
+
+          submitForm(Form[0])
     }
 
     return<>
-        <form onSubmit={onSubmitHandler}>
+        <form name="bookingForm" onSubmit={onSubmitHandler}>
                 <div >
                     <div className="reservation-div">
                         <label for="first-name">First Name: </label>
@@ -43,9 +59,8 @@ function BookingForm({reservationData, setReservationData, availableTime, setAva
                         <label for="res-date">Choose date: </label>
                         <input type="date" id="res-date" name="reservationDate" 
                                 value={reservationData.reservationDate} onChange={onChangeHandler} ></input>
-                    </div>
-                    <div className="reservation-div">
-                        <label for="res-time">Choose time: </label>
+
+                        <label for="res-time"> Choose time: </label>
                         <select id="res-time" name="reservationTime" 
                             value={reservationData.reservationTime} onChange={onChangeHandler}>
 
@@ -62,6 +77,7 @@ function BookingForm({reservationData, setReservationData, availableTime, setAva
                     <div className="reservation-div">
                         <label for="occasion">Occasion: </label>
                         <select id="occasion" name="occasion" value={reservationData.occasion} onChange={onChangeHandler}>
+                            <option>Select</option>
                             <option>Birthday</option>
                             <option>Anniversary</option>
                         </select>
@@ -80,6 +96,8 @@ function BookingForm({reservationData, setReservationData, availableTime, setAva
                 </div>
                 </form>
 
+                <ResrvationDataTable reservations={reservations}></ResrvationDataTable>
+                
 
     </>
 }

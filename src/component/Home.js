@@ -1,13 +1,24 @@
 import React from "react";
-import Navigation from "./nav/NavBar"; 
+import LittleLemon from "./LittleLemon";
+import Specials from "./Specials"
+
+
 
 function Home() {
-    return<>
-    <p>This is a homepage</p>
-    <h1>Little Lemon</h1>
-    <h3>Chicago</h3>
-    <h6>We are a family owned restorant</h6>
-    
+
+    return <>
+        <div className="main"> 
+            
+            <LittleLemon></LittleLemon>
+            <Specials></Specials>
+
+             <div>
+                
+                <div></div>
+                
+             </div>
+        </div>
+
     </>
 }
 
