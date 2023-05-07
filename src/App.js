@@ -15,12 +15,12 @@ const initialState = [  "17:00",
                       ];
 
 
-const initializeTimes = () => {
+export const initializeTimes = () => {
   //console.log("initializeTimes called...")
 
   const todayDate = new Date()
-  //console.log("todayDate == " + todayDate)
-  //console.log("todayDate.getDate() == " + todayDate.getDate())
+  console.log("todayDate == " + todayDate)
+  console.log("todayDate.getDate() == " + todayDate.getDate())
   const newAvailableTime = fetchAPI(todayDate)
   console.log(newAvailableTime)
 
@@ -31,6 +31,7 @@ const updateTimes = (availableTime, action) => {
   console.log("action == " + action); 
   console.log("newDate in App.js == " + action.payload)
   //Additional logic to change time will come here
+  //const newAvailableTime = availableTime;
   const userSelectedDate = new Date(action.payload);
   const newAvailableTime = fetchAPI(userSelectedDate)
   console.log(newAvailableTime)
