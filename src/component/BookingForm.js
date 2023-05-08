@@ -204,7 +204,7 @@ function BookingForm({reservations, setResrvations, reservationData, setReservat
 
                     <div className="reservation-div">
                         <label className="required" for="res-date">Reservation Date: </label>
-                        <input type="date" id="res-date" aria-label="res-date" name="reservationDate" aria-label="On Click"
+                        <input type="date" id="res-date" name="reservationDate" aria-label="On Click"
                                 value={reservationData.reservationDate} onChange={onChangeHandler} onBlur={validateReservationDate} required></input>
                         <span title="res-date-span" id="res-date-span"></span>
                     </div>
