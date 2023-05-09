@@ -43,6 +43,16 @@
 
 .reservation-div input{
     text-align: left;
+}
+
+.contactus-div {
+    padding-top: 1em;
+    padding-left: 2em;
+}
+
+.contactus-div label{
+    text-align: left;
+    vertical-align: top;
 
 }
 

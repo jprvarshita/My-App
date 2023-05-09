@@ -10,6 +10,9 @@ function Menu() {
             <LittleLemon></LittleLemon>
 
             <div>
+                <div>
+                    <h4>Our Delicius Menu</h4>
+                </div>
                <MenuItem></MenuItem>               
             </div>
         </div>

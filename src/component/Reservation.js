@@ -12,7 +12,10 @@ function Reservation({reservations, setResrvations, reservationData, setReservat
             <LittleLemon></LittleLemon>
 
             <div>
-               <BookingForm reservations={reservations} setResrvations={setResrvations}
+                <div>
+                    <h3>Reservation Details</h3>
+                </div>
+                 <BookingForm reservations={reservations} setResrvations={setResrvations}
                         reservationData={reservationData} setReservationData={setReservationData} 
                         availableTime={availableTime} setAvailableTime={setAvailableTime}
                         submitForm={submitForm}

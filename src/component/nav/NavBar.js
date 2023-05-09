@@ -11,7 +11,7 @@ function NavBar() {
                     <li><Link to="/">Home</Link></li>                
                     <li><Link to="/Menu">Menu</Link></li>
                     <li><Link to="/Reservation">Reservation</Link></li>                
-                    <li><Link to="/Contact">Contact</Link></li>
+                    <li><Link to="/Contact">Contact Us</Link></li>
                 </ul>                       
             </nav>
         </div>

@@ -184,7 +184,7 @@ function BookingForm({reservations, setResrvations, reservationData, setReservat
           submitForm(Form[0])
     }
 
-    return<>
+    return <>
         <form name="bookingForm" onSubmit={onSubmitHandler}>
                 <div >
                     <div className="reservation-div">
