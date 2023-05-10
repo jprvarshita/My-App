@@ -164,28 +164,11 @@ function BookingForm({reservations, setResrvations, reservationData, setReservat
         
     }
     
-    const onSubmitHandler = (event) => {
-        event.preventDefault();
-        //console.log(reservationData)
-        reservations.push(reservationData)
-        setResrvations(reservations)
-        //console.log(reservations)
-        setReservationData({
-            firstName : "",
-            lastName : "",
-            reservationDate : "",
-            reservationTime : "",
-            numberOfGuests : "",
-            occasion : "",
-            email : "",
-            phone : ""
-          })
-
-          submitForm(Form[0])
-    }
-
     return <>
-        <form name="bookingForm" onSubmit={onSubmitHandler}>
+        <div>
+            <h3>Reservation Details</h3>
+        </div>
+        <form name="bookingForm" onSubmit={submitForm}>
                 <div >
                     <div className="reservation-div">
                         <label className="required" for="first-name">First Name: </label>
@@ -252,7 +235,7 @@ function BookingForm({reservations, setResrvations, reservationData, setReservat
                         <span title="phone-span" id="phone-span"></span>
                     </div>
                     <div className="reservation-div">
-                        <button className="button" type="submit" id="reservation" name="reservation" 
+                        <button title="reservation" className="button" type="submit" id="reservation" name="reservation" 
                             disabled>Make Your reservation</button>
                     </div>
                 </div>

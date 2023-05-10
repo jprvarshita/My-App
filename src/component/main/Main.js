@@ -15,11 +15,35 @@ function Main({reservations, setResrvations, reservationData, setReservationData
 
     const navigate = useNavigate();
 
-    const submitForm = (form) => {  
-      const submitSuccess = submitAPI(form)
-      if (submitSuccess) {
-        navigate("/BookingConfirmed");
-      }
+    // const submitForm = (form) => {  
+    //   const submitSuccess = submitAPI(form)
+    //   if (submitSuccess) {
+    //     navigate("/BookingConfirmed");
+    //   }
+    // }
+
+    const submitForm = (event) => {
+
+        event.preventDefault();
+        //console.log(reservationData)
+        reservations.push(reservationData)
+        setResrvations(reservations)
+        //console.log(reservations)
+        setReservationData({
+            firstName : "",
+            lastName : "",
+            reservationDate : "",
+            reservationTime : "",
+            numberOfGuests : "",
+            occasion : "",
+            email : "",
+            phone : ""
+          })
+
+          const submitSuccess = submitAPI(event.target)
+          if (submitSuccess) {
+            navigate("/BookingConfirmed");
+          }
     }
 
     return <>
